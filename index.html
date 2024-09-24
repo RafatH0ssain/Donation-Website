@@ -22,7 +22,7 @@
         <!-- Top -->
         <div class="navbar bg-base-100 lg:w-5/6 m-auto bg-header-bg">
             <div class="navbar-start">
-                <button class="btn bg-FundFlow-green text-black lg:w-24">Blog</button>
+                <a href="./blog.html"><button class="btn bg-FundFlow-green text-black lg:w-24">Blog</button></a>
             </div>
             <div class="navbar-center flex-row">
                 <img src="images/logo.png" alt="FundFlow Logo">
@@ -36,8 +36,26 @@
           </div>
     </header>
 
-    <main>
+    <main class="flex justify-center lg:pt-10 sm:pt-5">
+        <div class="font-semibold lg:w-1/4 sm:1/2 flex justify-between">
+            <a href="#card-conrtainer"><button class="hover:bg-FundFlow-green sm:p-2 lg:p-4 sm:w-20 lg:w-36 bg-FundFlow-green rounded-xl">Donation</button></a>
+            <a href="./history.html"><button class="hover:bg-FundFlow-green sm:p-2 lg:p-4 sm:w-20 lg:w-36 rounded-xl border-2 border-black">History</button></a>
+        </div>
 
+        <div id="card-container" class="lg:w-3/4 sm:w-5/6">
+            <div class="card card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img src="./images/noakhali.png" alt="Movie" />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title">Donate for Flood of Noakhali</h2>
+                  <p>Click the button to watch on Jetflix app.</p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Watch</button>
+                  </div>
+                </div>
+              </div>
+        </div>
     </main>
 
     <footer>
