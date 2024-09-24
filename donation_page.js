@@ -33,10 +33,32 @@ tailwind.config = {
         account_balance -= amount_donated;
         document.getElementById('available-balance').innerText = account_balance.toLocaleString();
         document.getElementById('popup-box-3').showModal();
+        addHistory(amount_donated, totalId);
         return;
         
       });
     }
+
+    function addHistory(amount, totalId) {
+      const historyContainer = document.getElementById('history-cards');
+      
+      const transactionCard = document.createElement('div');
+      transactionCard.className = "card bg-base-100 shadow-xl p-4";
+      const currentDate = new Date();
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const day = currentDate.getDate();
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+      const seconds = currentDate.getSeconds();
+      transactionCard.innerHTML = `
+          <h3 class="card-title">Donation of BDT ${amount}!</h3>
+          <p>Date: ${hours}:${minutes}:${seconds}, ${month}/${day}/${year} </p>
+      `;
+      
+      historyContainer.appendChild(transactionCard);
+      document.getElementById('transaction-history').classList.remove('hidden');
+  }
   
     donation_handler('noakhali-button', 'noakhali-amount', 'noakhali-amount-total');
     donation_handler('feni-button', 'feni-amount', 'feni-amount-total');
@@ -49,6 +71,7 @@ tailwind.config = {
       document.getElementById('history-button').classList.remove('border-2');
       document.getElementById('donation-button').classList.remove('bg-FundFlow-green');
       document.getElementById('donation-button').classList.add('border-2', 'border-black');
+      document.getElementById('history-container').classList.remove('hidden');
     });
     document.getElementById('donation-button').addEventListener('click', function() {
       document.getElementById('card-container').classList.remove('hidden');
@@ -56,5 +79,6 @@ tailwind.config = {
       document.getElementById('history-button').classList.add('border-2');
       document.getElementById('donation-button').classList.add('bg-FundFlow-green');
       document.getElementById('donation-button').classList.remove('border-2', 'border-black');
+      document.getElementById('history-container').classList.add('hidden');
     });
   });
