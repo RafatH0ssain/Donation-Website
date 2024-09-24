@@ -51,8 +51,9 @@ tailwind.config = {
       const hours = currentDate.getHours();
       const minutes = currentDate.getMinutes();
       const seconds = currentDate.getSeconds();
+      const name = document.getElementById('cause-name').innerText;
       transactionCard.innerHTML = `
-          <h3 class="card-title">Donation of BDT ${amount}!</h3>
+          <h3 class="card-title">Donation of BDT ${amount} to "${name}!"</h3>
           <p>Date: ${hours}:${minutes}:${seconds}, ${month}/${day}/${year} </p>
       `;
       
