@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FundFlow | Blogs</title>
+    <!-- Embeds: -->
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- Lexend Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- JavaScript -->
+     <script src="donation_page.js"></script>
 </head>
 <body>
 
@@ -11,7 +22,7 @@
         <!-- Top -->
         <div class="navbar bg-base-100 lg:w-5/6 m-auto bg-header-bg">
             <div class="navbar-start">
-                <a href="#blog-body"><button class="btn bg-FundFlow-green text-black lg:w-24">Blog</button></a>
+                <a href="./index.html"><button class="btn bg-FundFlow-green text-black lg:w-24">Home</button></a>
             </div>
             <div class="navbar-center flex-row">
                 <img src="images/logo.png" alt="FundFlow Logo">
@@ -25,7 +36,37 @@
           </div>
     </header>
 
-    <main id="blog-body">
+    <main id="blog-body" class="w-5/6 m-auto">
+
+        <h2 class="text-4xl font-semibold py-10">Important FAQs</h2>
+          <div class="collapse bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-1" checked="checked" />
+            <div class="collapse-title text-xl font-medium">Do I need to link my banking card?</div>
+            <div class="collapse-content">
+              <p>No! You do not need to link any card, the transaction is done automatically through the nanowave technology.</p>
+            </div>
+          </div>
+          <div class="collapse bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title text-xl font-medium">Why do I have 5500BDT initially?</div>
+            <div class="collapse-content">
+              <p>5500 BDT is a good amount of money to have. Although it is not enough to help a lot of people, it's the thought that counts!</p>
+            </div>
+          </div>
+          <div class="collapse bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title text-xl font-medium">How can I help in real life?</div>
+            <div class="collapse-content">
+              <p>You can help by donating to many NGOs or local organizations. You can also help by posting about it on social media platforms!</p>
+            </div>
+          </div>
+          <div class="collapse bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title text-xl font-medium">Why the name FundFlow?</div>
+            <div class="collapse-content">
+              <p>The name FundFlow embodies a blend of meaning and purpose, capturing an essence that's best experienced, not explained.</p>
+            </div>
+          </div>
 
     </main>
     
