@@ -18,8 +18,7 @@
 </head>
 <body>
 
-    <header class="sticky m-auto block bg-header-bg lg:h-32 lg:pt-5 sm:h-14 sm:pt-2">
-        <!-- Top -->
+    <header class="sticky top-0 z-10 m-auto block bg-header-bg lg:h-32 lg:pt-5 sm:h-14 sm:pt-2">
         <div class="navbar bg-base-100 lg:w-5/6 m-auto bg-header-bg">
             <div class="navbar-start">
                 <a href="./blog.html"><button class="btn bg-FundFlow-green text-black lg:w-24">Blog</button></a>
@@ -30,18 +29,19 @@
             </div>
             <div class="navbar-end  font-semibold">
                 <img src="images/coin.png" alt="Coin Image">
-                <h2 class="available-balance">5500</h2>
+                <h2 id="available-balance">5500</h2>
                 <h2>&nbsp;BDT</h2>
             </div>
           </div>
     </header>
 
-    <main class="block justify-center lg:pt-10 sm:pt-5 mb-32">
-        <div class="m-auto font-semibold lg:w-1/4 sm:1/2 flex justify-between">
-            <a href="#card-conrtainer"><button class="hover:bg-FundFlow-green sm:p-2 lg:p-4 sm:w-20 lg:w-36 bg-FundFlow-green rounded-xl">Donation</button></a>
-            <a href="./history.html"><button class="hover:bg-FundFlow-green sm:p-2 lg:p-4 sm:w-20 lg:w-36 rounded-xl border-2 border-black">History</button></a>
+    <main class="block justify-center mb-32 w-full">
+        <div class="sm:pt-5 lg:pt-10 sticky lg:top-32 sm:top-20 bg-white w-full z-20 opacity-95">
+            <div class="m-auto font-semibold lg:w-1/4 sm:1/2 flex justify-between">
+                <button class="hover:bg-FundFlow-green sm:p-2 lg:p-4 sm:w-20 lg:w-36 bg-FundFlow-green rounded-xl" id="donation-button">Donation</button>
+                <button class="hover:bg-FundFlow-green sm:p-2 lg:p-4 sm:w-20 lg:w-36 rounded-xl border-2 border-black" id="history-button">History</button>
+            </div>
         </div>
-
         <div id="card-container" class=" m-auto w-5/6 sm:p-4">
 
             <div class="card card-side bg-base-100 shadow-xl flex lg:py-7 sm:py-3 px-12 mb-5">
@@ -54,7 +54,7 @@
                           <div class="text-black text-l flex justify-start">
                             <img src="images/coin.png" alt="">
                             <p>&nbsp;</p>
-                            <p id="noakhali-amount">89,400</p>
+                            <p id="noakhali-amount-total">89400</p>
                             <p> BDT</p>
                           </div>
                         </div>
@@ -62,13 +62,12 @@
                   <h2 class="card-title">Donate for Flood of Noakhali</h2>
                   <p>The recent floods in Noakhali have caused significant damage to homes infrastructure. Your donation will help provide essential supplies and to those affected by this disaster. Every contribution, big or small, makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
                   <div class="card-actions justify-center w-full">
-                    <form action="" class="w-5/6">
-                        <input
-                            type="number"
-                            placeholder="Type Amount"
-                            class="input border-3 border-black w-full"/>
-                    </form>
-                    <button class="btn btn-primary w-5/6 bg-FundFlow-green text-black border-3 hover:bg-white border" id="donate-button">Donate Now</button>
+                    <input
+                        id="noakhali-amount"
+                        type="number"
+                        placeholder="Type Amount"
+                        class="input border-3 border-black w-5/6"/>
+                    <button class="btn btn-primary w-5/6 bg-FundFlow-green text-black border-3 hover:bg-white border" id="noakhali-button">Donate Now</button>
                   </div>
                 </div>
             </div>
@@ -83,7 +82,7 @@
                           <div class="text-black text-l flex justify-start">
                             <img src="images/coin.png" alt="">
                             <p>&nbsp;</p>
-                            <p id="feni-amount">89,400</p>
+                            <p id="feni-amount-total">49800</p>
                             <p>&nbsp;BDT</p>
                           </div>
                         </div>
@@ -91,13 +90,12 @@
                   <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
                   <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
                   <div class="card-actions justify-center w-full">
-                    <form action="" class="w-5/6">
-                        <input
-                            type="number"
-                            placeholder="Type Amount"
-                            class="input border-3 border-black w-full"/>
-                    </form>
-                    <button class="btn btn-primary w-5/6 bg-FundFlow-green text-black border-3 hover:bg-white border" id="donate-button">Donate Now</button>
+                    <input
+                        id="feni-amount"
+                        type="number"
+                        placeholder="Type Amount"
+                        class="input border-3 border-black w-5/6"/>
+                    <button class="btn btn-primary w-5/6 bg-FundFlow-green text-black border-3 hover:bg-white border" id="feni-button">Donate Now</button>
                   </div>
                 </div>
             </div>
@@ -112,7 +110,7 @@
                           <div class="text-black text-l flex justify-start">
                             <img src="images/coin.png" alt="">
                             <p>&nbsp;</p>
-                            <p id="quota-amount">89,400</p>
+                            <p id="quota-amount-total">94800</p>
                             <p>&nbsp;BDT</p>
                           </div>
                         </div>
@@ -120,18 +118,46 @@
                   <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
                   <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need</p>
                   <div class="card-actions justify-center w-full">
-                    <form action="" class="w-5/6">
-                        <input
-                            type="number"
-                            placeholder="Type Amount"
-                            class="input border-3 border-black w-full"/>
+                    <input
+                        id="quota-amount"
+                        type="number"
+                        placeholder="Type Amount"
+                        class="input border-3 border-black w-5/6"/>
                     </form>
-                    <button class="btn btn-primary w-5/6 bg-FundFlow-green text-black border-3 hover:bg-white border" id="donate-button">Donate Now</button>
+                    <button class="btn btn-primary w-5/6 bg-FundFlow-green text-black border-3 hover:bg-white border" id="quota-button">Donate Now</button>
                   </div>
                 </div>
             </div>
         </div>
     </main>
-    
+    <dialog id="popup-box" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">Error!</h3>
+          <p class="py-4">Please enter a valid amount!</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+      <dialog id="popup-box-2" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">Error!</h3>
+          <p class="py-4">Insufficient Balance!</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+      <dialog id="popup-box-3" class="modal">
+        <div class="modal-box text-center justify-center">
+          <h3 class="text-lg font-bold">Congratulations!</h3>
+          <img src="images/coin.png" alt="">
+          <p class="py-4">You have donated for humanity</p>
+          <h5 class="font-semibold">Successfully!</h5>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
 </body>
 </html>
